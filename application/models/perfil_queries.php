@@ -114,8 +114,15 @@
 					$this->id_padre = $this->session->userdata('id');
 					$this->fecha 	= time()+2592000;
 					$this->db->insert('premium', $this);
-					$this->db->update('usuarios', array('status' => 3), array('id' => $this->id_padre));
-					$this->session->set_userdata(array('status' => 3));
+					if($this->session->userdata('status')<4)
+					{
+						$status = 3;
+					}else
+					{
+						$status = 5;
+					}
+					$this->db->update('usuarios', array('status' => $status), array('id' => $this->id_padre));
+					$this->session->set_userdata(array('status' => $status));
 					break;
 				
 				case 'comprobar':
@@ -128,10 +135,17 @@
 						{
 							if($value->fecha<time())
 							{
-								$this->status = 2;
-								$this->db->update('usuarios', $this, array('id' => $value->id));
+								if($this->session->userdata('status')<4)
+								{
+									$status = 2;
+								}else
+								{
+									$status = 4;
+								}
+								//$this->status = 2;
+								$this->db->update('usuarios', array('status' => $status), array('id' => $value->id));
 								$this->db->delete('premium', array('id' => $value->id));
-								$this->session->set_userdata(array('status' => 2));
+								$this->session->set_userdata(array('status' => $status));
 							}
 						}						
 					}
