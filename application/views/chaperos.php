@@ -1,7 +1,6 @@
-
 <?php
         $config['base_url'] = site_url('chaperos/');
-        $config['total_rows'] = count_num_usuarios();
+        $config['total_rows'] = count_num_usuarios_find();
         $config['per_page'] = '9'; 
         $config['first_link']   = $this->lang->line('Inicio');
         $config['last_link']    = $this->lang->line('Final');
