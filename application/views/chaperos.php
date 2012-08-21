@@ -151,7 +151,10 @@
         ?></p>
     </td>
     <td>
-        <?  $q = mysql_query("SELECT iduser,idfriend FROM friend WHERE iduser='".$this->session->userdata('id')."' AND idfriend='$item->id'") or die(mysql_error());
+       <?
+       if($this->session->userdata('status'))
+      {
+        $q = mysql_query("SELECT iduser,idfriend FROM friend WHERE iduser='".$this->session->userdata('id')."' AND idfriend='$item->id'") or die(mysql_error());
   $num=mysql_num_rows($q);
   if($num>0){
 ?>
@@ -160,7 +163,9 @@
 <? }else{ ?>
     <div id="follow<? echo $item->id;?>"><a href="javascript:void(0);" class="follow" id="<? echo $item->id;?>"><span>Añadir Favorito</span></a></div>
     <div id="remove<? echo $item->id;?>" style="display:none"><a href="javascript:void(0);" class="remove" id="<? echo $item->id;?>"><span>Quitar Favorito</span></a></div>
-<? } ?>
+<? } 
+}
+?>
     </td>
   </tr>
 </table>
