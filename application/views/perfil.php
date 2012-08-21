@@ -47,7 +47,6 @@
                     echo '<img src="http://gayria.com/imagenodisp.jpg" alt="" width="200"/>';
                   }
             ?>
-						<img src="<? echo base_url()?>upload/<? echo img_perfil($fotoperfil)?>" alt="" width="200"/>
 					</div>
 					<div class="col-two col">
                     <p class="titulosficha">Mis datos</p>
