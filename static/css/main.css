@@ -1,0 +1,152 @@
+
+
+
+
+/******* CONTENT *******/
+
+.reg{
+
+	width: 80%;
+
+	margin: 0pt auto;
+
+	padding-top: 10px;
+
+}
+
+h1{
+
+	color: #333;
+
+	font-size: 16px;
+
+	line-height: 3em;
+
+}
+
+label{
+
+	display: block;
+
+	color: #333;
+
+	line-height: 2em;
+
+	font-size: 12px;
+
+}
+
+.section{
+
+	margin-bottom: 25px;
+
+}
+
+input.text, input.select, input.submit{
+
+	width: 70%;
+
+	background: #fff;
+
+	padding: 8px;
+
+	color: #333;
+
+	border: 1px solid #E5E5E5;
+
+	margin-bottom: 15px;
+
+	border-radius: 5px;
+
+	-moz-border-radius: 5px;
+
+	-webkit-border-radius: 5px;
+
+	-khtml-border-radius: 5px;
+
+	 border-radius: 5px;
+
+     behavior: url(/PIE.htc);
+
+	 font-size: 12px;
+
+}
+
+.field4 {
+	font-size: 14px;
+	background: #fff;
+
+	padding: 8px;
+	margin-right: 10px;
+
+	color: #333;
+
+	border: 1px solid #E5E5E5;
+
+	margin-bottom: 15px;
+
+	border-radius: 5px;
+
+	-moz-border-radius: 5px;
+
+	-webkit-border-radius: 5px;
+
+	-khtml-border-radius: 5px;
+
+	 border-radius: 5px;
+
+     behavior: url(/PIE.htc);
+
+}
+
+input.text.active{
+
+	background: #F2F2F2 ;
+
+	border-color: #A2D9F7;
+
+	color: #333;
+
+}
+
+input.submit{
+
+	width: auto !Important;
+
+	background: #f5f5f5;
+
+	color: #000;
+
+	border-color: #c8c8c8;
+
+	padding: 5px;
+
+	margin-top: 0.5em;
+
+}
+
+.requisites{
+
+	padding: 0 2px 0 2px;
+
+}
+
+.requisites.error{
+
+	text-decoration: underline;
+
+	background: #F66917;
+
+	color: #fff;
+
+}
+
+input.error{
+
+	background: #F2F2F2;
+
+	border-color: #F66917;
+
+}
+
+/******* /CONTENT *******/

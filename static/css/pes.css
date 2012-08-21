@@ -1,0 +1,118 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700);
+
+* { margin: 0; padding: 0; }
+
+#page-wrap { width: 750px; margin: 50px auto; }
+a { text-decoration: none; }
+h3 { margin: 0 0 10px 0; }
+
+.tabs { list-style: none; overflow: hidden; padding-left: 6px;  }
+.tabs li { display: inline; }
+.tabs li a { 
+    display: block; 
+    float: left; 
+	padding: 6px 12px; 
+	border: 0px solid; 
+	background: #232323; 
+	margin: 0 0 0 0; 
+	color: #fff;
+	font-family: 'Ubuntu', sans-serif;
+	font-size:16px;
+	text-decoration: none;
+	}
+.tabs li a.current { 
+
+    background: #666; 
+	border-bottom: 0; 
+	position: relative; 
+	top: 2px; 
+	z-index: 2; 
+	color: #faac0f;
+	font-family: 'Ubuntu', sans-serif;
+	font-size:16px;
+	text-decoration: none;
+	}
+
+.box-wrapper {
+	-moz-box-shadow: 0 0 20px black;
+	-webkit-box-shadow: 0 0 20px black;
+	padding: 15px;
+	background: #232323;
+	left: 5px;
+	border: 0px solid ;
+	margin: 0 0 0 0;
+	position: relative;
+	width: 900px;
+	min-height: 310px;
+	-webkit-border-radius: 0px 10px 10px 10px;
+    -moz-border-radius: 0px 10px 10px 10px;
+    border-radius: 0px 10px 10px 10px;
+    behavior: url(/PIE.htc);
+}
+.content-box {
+	overflow: hidden;
+	/*position: relative;*/
+	border: 0px solid ;
+	width: 890px;
+	min-height: 300px;
+	left: 20px;
+	top: 20px;
+}
+
+.current { z-index: 100; }
+
+.col-one { 
+	width: 20%; 
+	float: left; 
+	position: relative; 
+	top: 350px; 
+	margin-right: 5%
+	
+	}
+
+.col-two { 
+	width: 40%; 
+	float: left; 
+	position: relative; 
+	top: 350px; 
+	margin-right: 5%
+	}
+
+.col-three { 
+	width: 30%; 
+	float: left; 
+	position: relative; 
+	top: 350px; 
+	}
+	
+.col-four { 
+	width: 30%; 
+	float: left; 
+	position: relative; 
+	top: 350px; 
+	}	
+	
+.col-five { 
+	width: 20%; 
+	float: left; 
+	position: relative; 
+	top: 350px; 
+	margin-right: 1%
+	}	
+	
+.col-six { 
+	width: 40%; 
+	float: left; 
+	position: relative; 
+	top: 350px; 
+	margin-right: 1%
+	}	
+		
+.col-seven { 
+	width: 95%; 
+	float: left; 
+	position: relative; 
+	top: 350px; 
+	
+	}		
+
