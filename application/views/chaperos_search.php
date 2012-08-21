@@ -173,7 +173,16 @@
         ?></p>
     </td>
     <td>
-    <a href="" class="add-button"><span>Añadir favorito</span></a>
+       <?  $q = mysql_query("SELECT iduser,idfriend FROM friend WHERE iduser='".$this->session->userdata('id')."' AND idfriend='$item->id'") or die(mysql_error());
+  $num=mysql_num_rows($q);
+  if($num>0){
+?>
+  <div id="remove<? echo $item->id;?>"><a href="javascript:void(0);" class="remove" id="<? echo $item->id;?>"><span>Quitar Favorito</span></a></div>
+    <div id="follow<? echo $item->id;?>" style="display:none"><a href="javascript:void(0);" class="follow" id="<? echo $item->id;?>"><span>Añadir Favorito</span></a></div>
+<? }else{ ?>
+    <div id="follow<? echo $item->id;?>"><a href="javascript:void(0);" class="follow" id="<? echo $item->id;?>"><span>Añadir Favorito</span></a></div>
+    <div id="remove<? echo $item->id;?>" style="display:none"><a href="javascript:void(0);" class="remove" id="<? echo $item->id;?>"><span>Quitar Favorito</span></a></div>
+<? } ?>
     </td>
   </tr>
 </table>
