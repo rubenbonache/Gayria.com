@@ -38,6 +38,15 @@
         <? if( ! $this->uri->segment(4)): ?>
 				<div id="one" class="content-box current">
 					<div class="col-one col">
+            <?
+                if($fotoperfil)
+                {
+                   echo '<img src="'.base_url().'upload/'.img_perfil($fotoperfil).'" alt="" width="200"/>';                                               
+                 }else
+                 {
+                    echo '<img src="http://gayria.com/imagenodisp.jpg" alt="" width="200"/>';
+                  }
+            ?>
 						<img src="<? echo base_url()?>upload/<? echo img_perfil($fotoperfil)?>" alt="" width="200"/>
 					</div>
 					<div class="col-two col">
