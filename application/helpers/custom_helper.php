@@ -61,6 +61,42 @@ if( ! function_exists('count_num_usuarios'))
 	}
 }
 
+if( ! function_exists('count_num_usuarios_find'))
+{
+	function count_num_usuarios_find()
+	{
+		$sql = mysql_query("SELECT count(id) as total FROM usuarios WHERE status < 4");
+		while($row = mysql_fetch_array($sql))
+		{
+			return $row['total'];
+		}
+	}
+}
+
+if( ! function_exists('count_num_chaperos_find'))
+{
+	function count_num_chaperos_find()
+	{
+		$sql = mysql_query("SELECT count(id) as total FROM usuarios WHERE status > 3");
+		while($row = mysql_fetch_array($sql))
+		{
+			return $row['total'];
+		}
+	}
+}
+
+if( ! function_exists('count_num_chaperos'))
+{
+	function count_num_chaperos()
+	{
+		$sql = mysql_query("SELECT count(id) as total FROM usuarios WHERE status > 3");
+		while($row = mysql_fetch_array($sql))
+		{
+			return $row['total'];
+		}
+	}
+}
+
 if( ! function_exists('count_num_chaperos'))
 {
 	function count_num_chaperos()
