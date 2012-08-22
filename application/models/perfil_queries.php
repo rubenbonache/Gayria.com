@@ -171,6 +171,19 @@
 			$this->db->delete('favoritos', array('me' => $this->session->userdata('id'), 'mi_fav' => $this->uri->segment(4)));
 		}
 
+		function email()
+		{
+			$email = $this->db->get_where('usuarios', array('email' => $this->input->post('email')));
+			return $email->result();
+		}
+
+		function pass_reset($pass_new)
+		{
+			$pass_new = time();
+			$pass = md5($pass_new);
+			$this->db->update('usuarios', array('pass' => $pass), array('email' => $this->input->post('email')));			
+		}
+
 		function buscar()
 		{
 			if($this->session->userdata('buscar'))
