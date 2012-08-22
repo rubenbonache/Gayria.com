@@ -157,14 +157,11 @@
 			if($this->uri->segment(3)=="user")
 			{
 				$this->db->query("DELETE FROM `usuarios` WHERE `id` = '".$this->uri->segment(4)."'");
-				$query = $this->db->get_where('galeria', array('author' => $this->uri->segment(4)));
-				foreach ($query->result() as $value) {
-					remove_image($value->id);
-				}
-				$this->db->query('DELETE FROM actividad WHERE author = "'.$this->uri->segment(4).'"');
-				$this->db->query('DELETE FROM mensajeria WHERE para = "'.$this->uri->segment(4).'"');
-				$this->db->query('DELETE FROM favoritos WHERE me = "'.$this->uri->segment(4).'"');
-				$this->db->query('DELETE FROM perfil_visita WHERE id_padre = "'.$this->uri->segment(4).'"');
+				@$this->db->query('DELETE FROM galeria WHERE author = "'.$this->uri->segment(4).'"');
+				@$this->db->query('DELETE FROM actividad WHERE author = "'.$this->uri->segment(4).'"');
+				@$this->db->query('DELETE FROM mensajeria WHERE para = "'.$this->uri->segment(4).'"');
+				@$this->db->query('DELETE FROM favoritos WHERE me = "'.$this->uri->segment(4).'"');
+				@$this->db->query('DELETE FROM perfil_visita WHERE id_padre = "'.$this->uri->segment(4).'"');
 				redirect('/admin');
 				//$this->db->query("DELETE FROM `webcam`.`galeria` WHERE `author` = '".$this->uri->segment(4)."'");				
 			}
