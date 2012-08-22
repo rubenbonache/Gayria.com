@@ -88,6 +88,8 @@ $(document).ready(function()
             ?>
             <div id="header-mail" class="header-mail">
             <?php
+            if($this->session->userdata('status'))
+            {
                 if($this->perfil->msg_read($this->session->userdata('id'))==0)
                 {
                     echo anchor('perfil/me/mensajeria',$this->perfil->msg_read($this->session->userdata('id')));
@@ -95,6 +97,7 @@ $(document).ready(function()
                 {
                     echo anchor('perfil/me/mensajeria',$this->perfil->msg_read($this->session->userdata('id')));
                 }
+            }
             ?>
             </div>
             <?php

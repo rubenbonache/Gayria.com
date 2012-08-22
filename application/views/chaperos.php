@@ -102,7 +102,7 @@
           </td>
         </tr>
       </table>
-      <input type="submit" name="button" id="button" class="button-1" value="Buscar" />
+      <input type="submit" name="submit" id="button" class="button-1" value="Buscar" />
     </td>
   </tr>      
 </table>
@@ -117,7 +117,7 @@
   $i = 1;
   $sql = $this->db->query("SELECT * FROM usuarios WHERE status > 3 ORDER BY id DESC LIMIT  ".$page.", 9");
   foreach ($sql->result() as $item) { 
-   if($item->user=='Admin'){}else{
+   if($item->id==1){}else{
 ?>
 <li style="border-bottom: 1px solid #eee;">
 <table>
@@ -126,7 +126,7 @@
     <?
       if( ! $item->fotoperfil)
       {
-        echo '<img src="http://gayria.com/imagenodisp.jpg" width="75px">';
+        echo '<img src="http://gayria.com/imagenodisppeq.jpg" width="75px">';
       }else
       {
         echo '<img src="'.base_url().'upload/'.img_perfil($item->fotoperfil).'" width="75px">';

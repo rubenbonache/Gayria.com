@@ -184,19 +184,21 @@
 			$this->db->update('usuarios', array('pass' => $pass), array('email' => $this->input->post('email')));			
 		}
 
-		function buscar()
+		function buscar_list()
 		{
-			if($this->session->userdata('buscar'))
-			{
-
-				$query = $this->db->get_where('buscar', array('id' => $this->session->userdata('buscar')));
+			$query = $this->db->get_where('buscar', array('id' => $this->session->userdata('buscar')));
 				foreach ($query->result() as $key) {
 					return $key->params;
 				}
-				if($_POST)
-				{
-					$find = array('buscar' => '');
-        			$this->session->unset_userdata($find);
+		}
+
+		function buscar()
+		{
+			
+					//$find = array('buscar' => '');
+        			//$this->session->unset_userdata($find);
+
+					$this->db->delete('buscar', array('id' => $this->session->userdata('buscar')));
 
         			$find = array('buscar' => md5(time()));
 					$this->session->set_userdata($find);
@@ -213,26 +215,8 @@
 					$this->params 			= json_encode($search);
 
 					$this->db->insert('buscar', $this);
-				}
-
-			}else{
-
-				$find = array('buscar' => md5(time()));
-				$this->session->set_userdata($find);
-
-				$search['name']			= $this->input->post('nombre');
-				//$search['apellido'] 	= $this->input->post('nombre');
-				$search['pais']			= $this->input->post('pais');
-				$search['estado']		= $this->input->post('estado');
-				$search['soy']			= $this->input->post('soy');
-				$search['orientacion']	= $this->input->post('orientacion');
-				$search['idiomas']		= $this->input->post('idiomas');
-
-				$this->id 				= $this->session->userdata('buscar');
-				$this->params 			= json_encode($search);
-
-				$this->db->insert('buscar', $this);
-			}
+					
+			
 		}
 
 		function user_update()

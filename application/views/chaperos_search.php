@@ -7,7 +7,11 @@
         $config['last_link']    = $this->lang->line('Final');
         $config['uri_segment']    = '3';
         $this->pagination->initialize($config);
-        $this->perfil->buscar();
+
+        if($this->input->post('submit'))
+        {
+          $this->perfil->buscar(); 
+        }
 
         $fields = json_decode($this->perfil->buscar(), true);
 
@@ -26,11 +30,11 @@
             if(is_array($value))
             {
               foreach ($value as $key => $value) {
-                $this->db->or_like('idiomas', $value, 'both');
+                $this->db->like('idiomas', $value, 'both');
               }
             }
             else{
-              $this->db->or_like($key, $value, 'both'); 
+              $this->db->like($key, $value, 'both'); 
             }
           }
         }
@@ -121,7 +125,7 @@
           </td>
         </tr>
       </table>
-      <input type="submit" name="button" id="button" class="button-1" value="Buscar" />
+      <input type="submit" name="submit" id="button" class="button-1" value="Buscar" />
     </td>
   </tr>      
 </table>
@@ -141,7 +145,7 @@
 
 
   foreach ($sql->result() as $item) { 
-   if($item->user=='Admin'){}else{
+   if($item->id==1){}else{
 ?>
 <li style="border-bottom: 1px solid #eee;">
 <table>
@@ -150,7 +154,7 @@
        <?
       if( ! $item->fotoperfil)
       {
-        echo '<img src="http://gayria.com/imagenodisp.jpg" width="75px">';
+        echo '<img src="http://gayria.com/imagenodisppeq.jpg" width="75px">';
       }else
       {
         echo '<img src="'.base_url().'upload/'.img_perfil($item->fotoperfil).'" width="75px">';
@@ -206,7 +210,7 @@
 }
 ?>
 </ul>
-Total = <?=$config['total_rows']?>
+
     </td>
   </tr>
 </table>

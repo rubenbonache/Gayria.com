@@ -651,5 +651,5 @@
 </div>
         </div>
       </div>
-<p align="center"><input type="submit" name="submit" value="<?php echo $this->lang->line('update')?>" class="ico del button" style="border: 1px solid #ccc"></p>
+<p align="center"><input type="submit" name="submit" value="<?php echo $this->lang->line('update')?>" class="ico del button" style="border: 1px solid #ccc"></p></form>
        

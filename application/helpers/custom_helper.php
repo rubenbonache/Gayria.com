@@ -348,12 +348,12 @@ if( ! function_exists('get_user_activity'))
 
 	function get_user_activity($value)
 	{
-		if( ! @$value['username'])
+		if( ! @$value['name'])
 		{
 			return anchor('#', 'Invitado');
 		}else
 		{
-			return anchor('admin/usuarios/views/'.$value['id'], $value['username']);
+			return anchor('admin/usuarios/views/'.$value['id'], $value['name']);
 		}
 	}
 }
