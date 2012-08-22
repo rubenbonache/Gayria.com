@@ -221,6 +221,10 @@
 
 		function user_update()
 		{
+			if($this->input->post('pass'))
+			{
+				$this->db->update('usuarios', array('pass' => md5($this->input->post('pass'))), array('id' => $this->session->userdata('id')));
+			}
 			$this->db->query("UPDATE usuarios SET ".item_post('user').",
 													  ".item_post('name').",
 													  ".item_post('apellido').",
@@ -266,7 +270,8 @@
 													  ".item_post('thotel').",
 													  ".item_post('viajes').",
 													  ".item_post('roll').",
-													  ".item_post('especial')."
+													  ".htmlentities(item_post('especial')).",
+													  ".htmlentities(item_post('descr'))."
 													  WHERE id = '".$this->session->userdata('id')."'");
 		}
     }

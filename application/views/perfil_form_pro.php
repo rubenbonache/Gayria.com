@@ -164,12 +164,12 @@
      <input type="checkbox" name="idiomas[8]" id="idiomas" value="8" <?php if(@in_array(8, $idiomas)) echo 'checked';?>/> <?php echo $this->lang->line('0_2_8')?><br/>
      <input type="checkbox" name="idiomas[9]" id="idiomas" value="9" <?php if(@in_array(9, $idiomas)) echo 'checked';?>/> <?php echo $this->lang->line('0_2_9')?><br/>
     </td>
-  </tr>
-<td width="150">Descripción</td>
+    </tr>
+    <td width="150">Frase dia</td>
     <td colspan="3">
-      <label for="descripcion"></label>
+      <label for="frasedia"></label>
       <textarea class="field" rows="10" cols="60" name="frasedia" cols="50" rows="5"  id="frasedia"><?php echo $frasedia;?></textarea></td>
-    </form>
+   
     </td>
     </tr>
 </table>
@@ -312,6 +312,13 @@
       ?>
     </select>  </td>
   </tr>
+  <td width="150">Descripción</td>
+    <td colspan="3">
+      <label for="descripcion"></label>
+      <textarea class="field" rows="10" cols="60" name="descr" cols="50" rows="5"  id="descr"><?php echo $descr;?></textarea></td>
+   
+    </td>
+    </tr>
 </table>
  <!-- End Sort -->
             
@@ -323,7 +330,7 @@
           
           <!-- Box Head -->
           <div class="box-head">
-            <h2><?php echo $this->lang->line('servicios')?></h2>
+            <h2>Servicios</h2>
           </div>
           <!-- End Box Head-->
           
@@ -364,7 +371,7 @@
   </tr>
   <tr>
     <td height="24">Especialidades</td>
-    <td><textarea name="especial" id="especialidades" cols="45" rows="5"><?=$especial?></textarea></td>
+    <td><textarea class="field" rows="10" cols="60" name="especial" cols="50" rows="5"  id="especial"><?=$especial ?></textarea></td>
   </tr>
 </table>
 </div>

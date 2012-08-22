@@ -19,7 +19,7 @@
                 <? } ?>
             </div>
               <em class="frasedia"><?=$frasedia?></em> 
-              </br>       	  
+                </br>       	  
         	  <div>
         	    <div class="clear">
                 </br>    
@@ -181,10 +181,15 @@
 					</div>
                     <div class="col-five col">
                         <p class="titulosficha"> </p>
-                        <table width="395" border="0">
+                        <br>
+                        <table width="425" border="0">
                           <tr>
                             <td class="datos" width="110px">Especialidades:</td>
-                            <td  class="datosresp" ><?=$especial?></td>
+                            <td  class="datosresp" ><?=nl2br($especial)?></td>
+                          </tr>
+                          <tr>
+                            <td class="datos" width="110px">Descripcción:</td>
+                            <td  class="datosresp" ><?=nl2br($descr)?></td>
                           </tr>
                          
                         </table>
