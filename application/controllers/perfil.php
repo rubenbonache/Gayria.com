@@ -21,6 +21,13 @@
 
 		}
 
+		function pass_recovery()
+		{
+			$this->load->view('header');
+			$this->load->view('pass_recovery');
+			$this->load->view('footer');
+		}
+
 		function view()
 		{
 			$mobile = '';
