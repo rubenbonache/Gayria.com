@@ -10,14 +10,13 @@
                   $num=mysql_num_rows($q);
                   if($num>0){
                 ?>
-                  <div id="remove<? echo $this->uri->segment('3');?>"><a href="javascript:void(0);" class="remove" id="<? echo $this->uri->segment('3');?>"><span>Quitar Favorito</span></a></div>
-                    <div id="follow<? echo $this->uri->segment('3');?>" style="display:none"><a href="javascript:void(0);" class="follow" id="<? echo $this->uri->segment('3');?>"><span>Añadir Favorito</span></a></div>
+                  <div id="remove<? echo $this->uri->segment('3');?>"><a href="javascript:void(0);" class="remove" id="<? echo $this->uri->segment('3');?>"><span>Quitar Favorito</span></a> <? if($this->uri->segment(3)==$this->session->userdata('id')){ }else{ ?><a href="javascript:void(0);" class="mail-button" onclick="window.open('<?=site_url('service/mensajeria/nuevo/'.$this->uri->segment(3))?>', '_blank', 'width=1000,height=400,scrollbars=yes,status=yes,resizable=yes,screenx=200,screeny=200');"><span>Enviar mensaje</span></a><? } ?></div>
+                    <div id="follow<? echo $this->uri->segment('3');?>" style="display:none"><a href="javascript:void(0);" class="follow" id="<? echo $this->uri->segment('3');?>"><span>Añadir Favorito</span></a> <? if($this->uri->segment(3)==$this->session->userdata('id')){ }else{ ?><a href="javascript:void(0);" class="mail-button" onclick="window.open('<?=site_url('service/mensajeria/nuevo/'.$this->uri->segment(3))?>', '_blank', 'width=1000,height=400,scrollbars=yes,status=yes,resizable=yes,screenx=200,screeny=200');"><span>Enviar mensaje</span></a><? } ?></div>
                 <? }else{ ?>
-                    <div id="follow<? echo $this->uri->segment('3');?>"><a href="javascript:void(0);" class="follow" id="<? echo $this->uri->segment('3');?>"><span>Añadir Favorito</span></a></div>
-                    <div id="remove<? echo $this->uri->segment('3');?>" style="display:none"><a href="javascript:void(0);" class="remove" id="<? echo $this->uri->segment('3');?>"><span>Quitar Favorito</span></a></div>
+                    <div id="follow<? echo $this->uri->segment('3');?>"><a href="javascript:void(0);" class="follow" id="<? echo $this->uri->segment('3');?>"><span>Añadir Favorito</span></a> <? if($this->uri->segment(3)==$this->session->userdata('id')){ }else{ ?><a href="javascript:void(0);" class="mail-button" onclick="window.open('<?=site_url('service/mensajeria/nuevo/'.$this->uri->segment(3))?>', '_blank', 'width=1000,height=400,scrollbars=yes,status=yes,resizable=yes,screenx=200,screeny=200');"><span>Enviar mensaje</span></a><? } ?></div>
+                    <div id="remove<? echo $this->uri->segment('3');?>" style="display:none"><a href="javascript:void(0);" class="remove" id="<? echo $this->uri->segment('3');?>"><span>Quitar Favorito</span></a> <? if($this->uri->segment(3)==$this->session->userdata('id')){ }else{ ?><a href="javascript:void(0);" class="mail-button" onclick="window.open('<?=site_url('service/mensajeria/nuevo/'.$this->uri->segment(3))?>', '_blank', 'width=1000,height=400,scrollbars=yes,status=yes,resizable=yes,screenx=200,screeny=200');"><span>Enviar mensaje</span></a><? } ?></div>
                 <? } ?>
                 <? } ?>
-              <? if($this->uri->segment(3)==$this->session->userdata('id')){ }else{ ?><a href="javascript:void(0);" class="mail-button" onclick="window.open('<?=site_url('service/mensajeria/nuevo/'.$this->uri->segment(3))?>', '_blank', 'width=1000,height=400,scrollbars=yes,status=yes,resizable=yes,screenx=200,screeny=200');"><span>Enviar mensaje</span></a><? } ?>
             </div>
               <em class="frasedia"><?=$frasedia?></em> 
               </br>       	  
