@@ -335,7 +335,7 @@
   <tr>
     <td width="150">Tengo sitio</td>
     <td><input type="radio" name="tsitio" id="tsitio" value="1" <?php if($tsitio==1) echo "checked"?>/>Si tengo
-  <input type="radio" name="tsitio" id="tsitioi" value="2"<?php if($tsitio==2) echo "checked"?> />No tengo</td>
+  <input type="radio" name="tsitio" id="tsitio" value="2"<?php if($tsitio==2) echo "checked"?> />No tengo</td>
   </tr>
   <tr>
     <td>Tarifa en mi sitio</td>

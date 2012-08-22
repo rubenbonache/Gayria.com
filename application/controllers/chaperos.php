@@ -27,7 +27,7 @@
 					{
 
 						$this->load->view('header');
-						$this->load->view('perfil', $item);
+						$this->load->view('perfil_pro', $item);
 						$this->load->view('footer');
 					}
 		}
