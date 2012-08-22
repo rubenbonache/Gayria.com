@@ -389,6 +389,8 @@
         <input type="radio" name="tsitio" id="tsitio" value="1" <?php if($tsitio==10) echo "checked"?>/> <?php echo $this->lang->line('2_0_10')?>  <br/>
         <input type="radio" name="tsitio" id="tsitio" value="2" <?php if($tsitio==20) echo "checked"?>/> <?php echo $this->lang->line('2_0_20')?>  <br/>
    </td>
+ </tr>
+ <tr>
     <td width="150"><?php echo $this->lang->line('fueradel')?> </td>
     <td colspan="3">
         <input type="radio" name="armario" id="armario" value="1" <?php if($armario==1) echo "checked"?>/> <?php echo $this->lang->line('2_0_1')?>  <br/>
