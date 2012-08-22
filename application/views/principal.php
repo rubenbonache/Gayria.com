@@ -142,7 +142,7 @@ date_default_timezone_set('UTC');
                                         <input type="password" name="pass" class="field size1">
                                     </p>
                                     <p class="text-1">
-                                        <input type="submit" value="<?=$this->lang->line('button_entrar')?>" class="button-1"><a href="" class="link-1 right"><?=$this->lang->line('rec_pass')?></a></form>
+                                        <input type="submit" value="<?=$this->lang->line('button_entrar')?>" class="button-1"><?=anchor('perfil/pass_recovery',$this->lang->line('rec_pass'), 'class="link-1 right"')?></form>
                                     </p>
                                     
                                 </div>
