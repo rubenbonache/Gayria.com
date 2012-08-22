@@ -156,7 +156,7 @@
 		{
 			if($this->uri->segment(3)=="user")
 			{
-				$this->db->query("DELETE FROM `webcam`.`usuarios` WHERE `usuarios`.`id` = '".$this->uri->segment(4)."'");
+				$this->db->query("DELETE FROM `usuarios` WHERE `id` = '".$this->uri->segment(4)."'");
 				$query = $this->db->get_where('galeria', array('author' => $this->uri->segment(4)));
 				foreach ($query->result() as $value) {
 					remove_image($value->id);
