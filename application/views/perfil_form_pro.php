@@ -47,10 +47,6 @@
     <td>Contraseña</td>
     <td><input class="field" name="pass" type="password" id="pass" size="50"/></td>
   </tr>
-  <tr>
-    <td>Repite contraseña</td>
-    <td><input class="field" name="pass2" type="password" id="pass2" size="50"/></td>
-  </tr>
 </table>
  <!-- End Sort -->
             
@@ -374,5 +370,4 @@
 </div>
         </div>
       </div>
-<input type="submit" name="submit" value="<?php echo $this->lang->line('update')?>" class="ico del button" style="border: 1px solid #ccc">
-    
+<p align="center"><input type="submit" name="submit" value="<?php echo $this->lang->line('update')?>" class="ico del button" style="border: 1px solid #ccc"></p>
