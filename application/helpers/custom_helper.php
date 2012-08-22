@@ -49,6 +49,37 @@ if( ! function_exists('count_num_videos'))
 	}
 }
 
+if( ! function_exists('json_find'))
+{
+	function json_find()
+	{
+		$CI =& get_instance();
+		//$CI->load->model('perfil_queries', 'perfil');
+
+		$query = $CI->db->get_where('buscar', array('id' => $CI->session->userdata('buscar')));
+				foreach ($query->result() as $key) {
+					$fields = $key->params;
+				}
+		$fields = json_decode($fields, true);
+
+		 foreach ($fields as $key => $value) {
+           if($value=='')
+           { 
+           }else{
+            if(is_array($value))
+            {
+              foreach ($value as $key => $value) {
+                $CI->db->or_like('idiomas', $value, 'both');
+              }
+            }
+            else{
+              $CI->db->or_like($key, $value, 'both'); 
+            }
+          }
+        }
+	}
+}
+
 if( ! function_exists('count_num_usuarios'))
 {
 	function count_num_usuarios()
@@ -65,11 +96,11 @@ if( ! function_exists('count_num_usuarios_find'))
 {
 	function count_num_usuarios_find()
 	{
-		$sql = mysql_query("SELECT count(id) as total FROM usuarios WHERE status < 4");
-		while($row = mysql_fetch_array($sql))
-		{
-			return $row['total'];
-		}
+		$CI =& get_instance();
+		json_find();
+		$CI->db->where('status <', 4);
+		$CI->db->from('usuarios');
+		return $CI->db->count_all_results();
 	}
 }
 
@@ -77,11 +108,11 @@ if( ! function_exists('count_num_chaperos_find'))
 {
 	function count_num_chaperos_find()
 	{
-		$sql = mysql_query("SELECT count(id) as total FROM usuarios WHERE status > 3");
-		while($row = mysql_fetch_array($sql))
-		{
-			return $row['total'];
-		}
+		$CI =& get_instance();
+		json_find();
+		$CI->db->where('status >', 3);
+		$CI->db->from('usuarios');
+		return $CI->db->count_all_results();
 	}
 }
 
