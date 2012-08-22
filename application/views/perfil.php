@@ -106,6 +106,10 @@
 						<p class="titulosficha">Mi situación actual</p>
                         <table width="395" border="0">
                           <tr>
+                            <td class="datos">Tengo sitio?</td>
+                            <td colspan="6" class="datosresp" ><?=$this->lang->line('2_0_'.$tsitio)?></td>
+                          </tr>
+                          <tr>
                            <td width="130" class="datos">Fuera del armario?</td>
                            <td width="255" colspan="6" class="datosresp"><?=$this->lang->line('2_0_'.$armario)?></td>
                           </tr>
@@ -125,10 +129,7 @@
                             <td class="datos">Vivo en:</td>
                             <td colspan="6" class="datosresp" ><?=pais($pais)?>, <?=estado($estado)?></td>
                           </tr>
-                          <tr>
-                            <td class="datos">Tengo sitio?</td>
-                            <td colspan="6" class="datosresp" ></td>
-                          </tr>
+                          
                         </table>
 						
 					</div>
