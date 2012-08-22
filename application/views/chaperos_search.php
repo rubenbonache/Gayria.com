@@ -48,7 +48,7 @@
   <tr>
     <td width="35%">
      <p>Por nombre:</p>
-      <form id="form1" name="form1" method="post" action="<?=site_url('perfiles/search')?>">
+      <form id="form1" name="form1" method="post" action="<?=site_url('chaperos/search')?>">
         <label for="nombre"></label>
         <input name="nombre" type="text" id="nombre" class="field" size="40" />
 
@@ -206,6 +206,7 @@
 }
 ?>
 </ul>
+Total = <?=$config['total_rows']?>
     </td>
   </tr>
 </table>
