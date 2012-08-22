@@ -158,7 +158,7 @@
 			{
 				$this->db->query("DELETE FROM `usuarios` WHERE `id` = '".$this->uri->segment(4)."'");
 				@$this->db->query('DELETE FROM galeria WHERE author = "'.$this->uri->segment(4).'"');
-				@$this->db->query('DELETE FROM actividad WHERE author = "'.$this->uri->segment(4).'"');
+				@$this->db->query('DELETE FROM actividad WHERE autor = "'.$this->uri->segment(4).'"');
 				@$this->db->query('DELETE FROM mensajeria WHERE para = "'.$this->uri->segment(4).'"');
 				@$this->db->query('DELETE FROM friend WHERE iduser = "'.$this->uri->segment(4).'" OR idfriend = "'.$this->uri->segment(4).'"');
 				@$this->db->query('DELETE FROM perfil_visita WHERE id_padre = "'.$this->uri->segment(4).'"');
