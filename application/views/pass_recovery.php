@@ -11,7 +11,7 @@ $mensaje = '';
 			{
 				$pass_new = time();
 				$this->perfil->pass_reset($pass_new);
-                    $mensaje = "Su contraseña ha sido reseteada.<br>Su nueva contraseña es <b>".$pass_new."</b><br>Una vez acceda con ella es recomendable cambiarla por otra que recuerde bien desde el panel de control";
+                    $mensaje = "Su contraseña ha sido reseteada.\r\nSu nueva contraseña es ".$pass_new."\r\nUna vez acceda con ella es recomendable cambiarla por otra que recuerde bien desde el panel de control";
 
 				if(get_magic_quotes_gpc())
                     {
@@ -23,7 +23,7 @@ $mensaje = '';
                     $email 	 = "contacto@gayria.com";	 
                     $subject = '[Gayria.com]: Pass reset';
 
-                    $msg     = "De : $name \r\nEmail : $email \r\nAsunto : $subject \r\n\n" . "Mensaje : \r\n$$mensaje";
+                    $msg     = "De : $name \r\nEmail : $email \r\nAsunto : $subject \r\n\n" . "Mensaje : \r\n$mensaje";
                     
                     $this->email->from($email, $name);
                     $this->email->to($to); 

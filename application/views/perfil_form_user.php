@@ -44,20 +44,12 @@
     <td><input class="field" name="apellido" type="text" id="apellido" size="50" value="<?php echo $apellido;?>"/></td>
   </tr>
   <tr>
-    <td><?php echo $this->lang->line('nom_user')?></td>
-    <td><input class="field" name="user" type="text" id="usuario" size="50" value="<?php echo $user;?>"/></td>
-  </tr>
-  <tr>
     <td><?php echo $this->lang->line('email')?></td>
     <td><input class="field" name="email" type="text" id="email" size="50" value="<?php echo $email;?>"/></td>
   </tr>
   <tr>
     <td>Contraseña</td>
     <td><input class="field" name="pass" type="password" id="pass" size="50"/></td>
-  </tr>
-  <tr>
-    <td>Repite contraseña</td>
-    <td><input class="field" name="pass2" type="password" id="pass2" size="50"/></td>
   </tr>
 </table>
 </div>
@@ -392,6 +384,11 @@
             <div class="form">
 <table class="table" width="730" border="0">
   <tr>
+    <td width="150">Tengo sitio </td>
+    <td colspan="3">
+        <input type="radio" name="tsitio" id="tsitio" value="1" <?php if($tsitio==10) echo "checked"?>/> <?php echo $this->lang->line('2_0_10')?>  <br/>
+        <input type="radio" name="tsitio" id="tsitio" value="2" <?php if($stitio==20) echo "checked"?>/> <?php echo $this->lang->line('2_0_20')?>  <br/>
+   </td>
     <td width="150"><?php echo $this->lang->line('fueradel')?> </td>
     <td colspan="3">
         <input type="radio" name="armario" id="armario" value="1" <?php if($armario==1) echo "checked"?>/> <?php echo $this->lang->line('2_0_1')?>  <br/>
@@ -652,5 +649,5 @@
 </div>
         </div>
       </div>
-<input type="submit" name="submit" value="<?php echo $this->lang->line('update')?>" class="ico del button" style="border: 1px solid #ccc">
+<p align="center"><input type="submit" name="submit" value="<?php echo $this->lang->line('update')?>" class="ico del button" style="border: 1px solid #ccc"></p>
        
