@@ -23,6 +23,15 @@
 
 		function pass_recovery()
 		{
+			$this->load->library('email');
+
+                    $config['protocol'] = 'sendmail';
+                    $config['mailpath'] = '/usr/sbin/sendmail';
+                    $config['charset'] = 'iso-8859-1';
+                    $config['wordwrap'] = TRUE;
+
+                    $this->email->initialize($config);
+                    
 			$this->load->view('header');
 			$this->load->view('pass_recovery');
 			$this->load->view('footer');
