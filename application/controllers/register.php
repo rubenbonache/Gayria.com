@@ -11,7 +11,7 @@
 			$this->load->database();
 			$this->load->model('register_queries', 'reg');
 			//$this->perfil->premium('comprobar');
-			$this->load->model('perfil_queries', 'perfil');
+			
 			
 
 		}
