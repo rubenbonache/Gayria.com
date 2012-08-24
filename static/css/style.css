@@ -850,8 +850,8 @@ textarea.size1 { height:180px; }
 .right, .alignright { float:right; display:inline; }
 
 .up-button,
-.up-button span { float:left; height:26px; background:url(../images/up-button.png) no-repeat 0 0; padding:0 10px 0 28px; }
-.up-button span { background-position:right 0; padding:0 10px 0 0; -moz-box-shadow: 0 0 2px #978f6c; -webkit-box-shadow: 0 0 2px #978f6c; }
+.up-button p{ float:left; height:26px; background:url(../images/up-button.png) no-repeat 0 0; padding:0 10px 0 28px; }
+.up-button p{ background-position:right 0; padding:0 10px 0 0; -moz-box-shadow: 0 0 2px #978f6c; -webkit-box-shadow: 0 0 2px #978f6c; }
 .up-button { font-weight: bold; font-size:10px; color:#747474; text-decoration: none; line-height:26px; text-transform:uppercase;}
 .up-button:hover { color:#333; text-decoration:none;}
 

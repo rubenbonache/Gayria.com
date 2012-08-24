@@ -16,13 +16,13 @@ date_default_timezone_set('UTC');
 	<script type='text/javascript' src="<?php echo base_url()?>static/js/slotmachine.js"></script>
     <script>
 
-function actualizar(){
+/*function actualizar(){
    $('#cssmen').load('<?php echo base_url()?>index.php/perfil/menu').fadeIn("slow");
    $('#header-mail').load('<?php echo site_url('perfil/mail')?>').fadeIn("slow");
     }
 
 setInterval( "actualizar()", 10000 );
-
+*/
     $(document).ready(function(){
         $("#pais").change(function(){
             $.post("<?php echo site_url('service/estados/')?>",{ id:$(this).val() },function(data){$("#estado").html(data);})
@@ -71,11 +71,150 @@ $(document).ready(function()
     });
 });
     </script>
+<?
+    if($this->uri->segment(3)=="galeria")
+    {
+?>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/mootools/1.2.2/mootools.js"></script>
+
+    <script type="text/javascript" src="<?=base_url()?>source/Fx.ProgressBar.js"></script>
+
+    <script type="text/javascript" src="<?=base_url()?>source/Swiff.Uploader.js"></script>
+
+    <script type="text/javascript" src="<?=base_url()?>source/FancyUpload3.Attach.js"></script>
+
+
+    <!-- See script.js -->
+    <script type="text/javascript">
+        //<![CDATA[
+
+        /**
+ * FancyUpload Showcase
+ *
+ * @license     MIT License
+ * @author      Harald Kirschner <mail [at] digitarald [dot] de>
+ * @copyright   Authors
+ */
+
+window.addEvent('domready', function() {
+
+    /**
+     * Uploader instance
+     */
+    var up = new FancyUpload3.Attach('demo-list', '#demo-attach, #demo-attach-2', {
+        path: '<?=base_url()?>source/Swiff.Uploader.swf',
+        url: '<?=site_url("service/up/send/".$this->session->userdata('id'))?>',
+        fileSizeMax: 200 * 1024 * 1024,
+        
+        verbose: true,
+        
+        onSelectFail: function(files) {
+            files.each(function(file) {
+                document.getElementById('demo-attach').style.display="none";
+                new Element('li', {
+                    'class': 'file-invalid',
+                    events: {
+                        click: function() {
+                            this.destroy();
+                            document.getElementById('demo-attach').style.display="";
+                        }
+                    }
+                }).adopt(
+                    new Element('span', {html: file.validationErrorMessage || file.validationError})
+                ).inject(this.list, 'bottom');
+            }, this);   
+        },
+        
+        onFileSuccess: function(file) {
+            window.location = "<?=site_url('perfil/me/galeria')?>";
+            //new Element('input', {type: 'checkbox', 'checked': true}).inject(file.ui.element, 'top');
+            //file.ui.element.highlight('#e6efc2');
+        },
+        
+        onFileError: function(file) {
+            document.getElementById('demo-attach').style.display="none";
+            file.ui.cancel.set('html', 'Retry').removeEvents().addEvent('click', function() {
+                file.requeue();
+                return false;
+            });
+            
+            /*new Element('span', {
+                html: file.errorMessage,
+                'class': 'file-error'
+            }).inject(file.ui.cancel, 'after');*/
+        },
+        
+        onFileRequeue: function(file) {
+            file.ui.element.getElement('.file-error').destroy();
+            
+            file.ui.cancel.set('html', 'Cancel').removeEvents().addEvent('click', function() {
+                file.remove();
+                return false;
+            });
+            
+            this.start();
+        }
+        
+    });
+
+});
+
+        //]]>
+    </script>
 
     
-    
+    <style type="text/css">
 
 
+
+#demo-list {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+#demo-list .file-invalid {
+    cursor: pointer;
+    color: #000;
+    padding-left: 48px;
+    line-height: 24px;
+    background: url(http://macbook.local/~ruben/up3/showcase/attach-a-file/assets/error.png) no-repeat 24px 5px;
+    margin-bottom: 1px;
+}
+#demo-list .file-invalid span {
+    background-color: transparent;
+    padding: 1px;
+}
+
+#demo-list .file {
+    line-height: 2em;
+    padding-left: 22px;
+    /*background: url(http://macbook.local/~ruben/up3/showcase/attach-a-file/assets/attach.png) no-repeat 1px 50%;*/
+}
+
+#demo-list .file span,
+#demo-list .file a {
+    padding: 0 4px;
+}
+
+#demo-list .file .file-size {
+    color: #000;
+}
+
+#demo-list .file .file-error {
+    color: #000;
+}
+
+#demo-list .file .file-progress {
+    width: 125px;
+    height: 12px;
+    vertical-align: middle;
+    background-image: url(http://macbook.local/~ruben/up3/assets/progress-bar/progress.gif);
+}
+    </style>
+<?
+}
+?>
 </head>
 
 <body>

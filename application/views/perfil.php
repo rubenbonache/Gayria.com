@@ -1,3 +1,4 @@
+
 <?
   $fnacimiento = json_decode($fnacimiento,true);
   $fnacimiento = mdate('%Y')-$fnacimiento['ano'];

@@ -6,6 +6,14 @@
   $tipochico = json_decode($tipochico,true);
   $fetiches = json_decode($fetiches,true);
   $psexuales = json_decode($psexuales,true);
+
+  if($this->session->userdata('status')<4)
+  {
+    $link = 'perfil/view/';
+  }else
+  {
+    $link = 'chaperos/item/';
+  }
 ?>
 
 <div id="cssmenu" class='cssmenu'>
@@ -13,9 +21,10 @@
    <li><?php echo anchor('perfil/me/', '<span>'.$this->lang->line('info').'</span>');?></li>
    <li><?php echo anchor('perfil/me/galeria', '<span>'.$this->lang->line('galeria').'</span>');?></li>
    <li><?php echo anchor('perfil/me/mensajeria', '<span>'.$this->lang->line('mensajeria').' '.$this->perfil->msg_read($this->session->userdata('id')).'</span>');?></li>
-   <li><?php echo anchor('perfil/view/'.$this->session->userdata('id'), '<span>'.$this->lang->line('mi_perfil').'</span>');?></li>
+   <li><?php echo anchor($link.$this->session->userdata('id'), '<span>'.$this->lang->line('mi_perfil').'</span>');?></li>
    <li><?php echo anchor('service/auth/logout', '<span>'.$this->lang->line('logout').'</span>');?></li>
    <?php if($this->session->userdata('status')==2):?><li><?php echo anchor('premium', '<span style="color: red;">Premium</span>');?></li><?php endif;?>
+   <?php if($this->session->userdata('status')==4):?><li><?php echo anchor('premium', '<span style="color: red;">Premium</span>');?></li><?php endif;?>
 </ul>
 </div>
   <?php echo form_open('perfil/me');?>

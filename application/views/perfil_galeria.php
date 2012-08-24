@@ -1,4 +1,6 @@
-<?php
+	
+
+	<?php
         $config['base_url'] = site_url('perfil/me/galeria/');
         $config['total_rows'] = count_num_galeria_user();
         $config['per_page'] = '10'; 
@@ -14,15 +16,24 @@
           $page = $this->uri->segment(4);
         }
 
+  if($this->session->userdata('status')<4)
+  {
+    $link = 'perfil/view/';
+  }else
+  {
+    $link = 'chaperos/item/';
+  }
+
 ?>
 <div id="cssmenu" class='cssmenu'>
 <ul>
    <li><?php echo anchor('perfil/me/', '<span>'.$this->lang->line('info').'</span>');?></li>
    <li><?php echo anchor('perfil/me/galeria', '<span>'.$this->lang->line('galeria').'</span>');?></li>
    <li><?php echo anchor('perfil/me/mensajeria', '<span>'.$this->lang->line('mensajeria').' '.$this->perfil->msg_read($this->session->userdata('id')).'</span>');?></li>
-   <li><?php echo anchor('perfil/view/'.$this->session->userdata('id'), '<span>'.$this->lang->line('mi_perfil').'</span>');?></li>
+   <li><?php echo anchor($link.$this->session->userdata('id'), '<span>'.$this->lang->line('mi_perfil').'</span>');?></li>
    <li><?php echo anchor('service/auth/logout', '<span>'.$this->lang->line('logout').'</span>');?></li>
    <?php if($this->session->userdata('status')==2):?><li><?php echo anchor('premium', '<span style="color: red;">Premium</span>');?></li><?php endif;?>
+   <?php if($this->session->userdata('status')==4):?><li><?php echo anchor('premium', '<span style="color: red;">Premium</span>');?></li><?php endif;?>
 </ul>
 </div>
 
@@ -79,7 +90,10 @@
 					<div class="box-head">
 						<h2 class="left">Lista de imagenes</h2>
 						<div class="right">
-							<a href="javascript:void(0);" class="up-button" onclick="window.open('<?php echo site_url('/service/upload/file');?>', '_blank', 'width=350,height=150,menubar=no, location=no ,status=no, titlebar=no,toolbar=no, scrolling=no, scrollbars=no,screenx=100,screeny=100');">Subir imagen</a>
+							<div>
+							<a href="#" id="demo-attach" class="up-button">Subir imagen</a>
+							<ul id="demo-list"></ul>
+							</div><!--<a href="javascript:void(0);" class="up-button" onclick="window.open('<?php echo site_url('/service/upload/file');?>', '_blank', 'width=350,height=150,menubar=no, location=no ,status=no, titlebar=no,toolbar=no, scrolling=no, scrollbars=no,screenx=100,screeny=100');">Subir imagen</a>-->
 						</div>
 					</div>
 					<!-- End Box Head-->
