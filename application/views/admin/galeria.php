@@ -119,49 +119,8 @@
 			</div>
 			<!-- End Content -->
 			
-			<!-- Sidebar -->
-			<div id="sidebar">
-				
-				<!-- Box -->
-				<div class="box">
-					
-					<!-- Box Head -->
-					<div class="box-head">
-						<h2>Actividad</h2>
-					</div>
-					<!-- End Box Head-->
-					
-					<div class="box-content">
-						<!-- Actividad -->
-						<div id="activity">
-							<?php
-								$query = $this->db->query("SELECT * FROM actividad ORDER BY id DESC LIMIT 0,10");
-							foreach ($query->result() as $item):
-						echo '
-						<div class="activity">
-							<label>'; echo mdate('%d/%m/%Y', $item->fecha); echo '</label>
-							<div style="display: inline;">'; echo anchor('admin/usuarios/views/'.$item->autor, get_user($item->autor)); echo '</div>
-							<div style="display: inline;">'; echo $this->lang->line("activity_".$item->action); echo '</div>';
-							
-								if($item->alter!=0):
-							
-							echo '<div style="display: inline;"> '; echo anchor('admin/usuarios/views/'.$item->alter, get_user($item->alter)); echo '</div>';
-							endif;
-						
-								if($item->status!=0):
-							
-							echo '<div style="display: inline;" class="status"> '; echo tipo_cuenta($item->status); echo ' </div>';
-							endif;
-						echo '</div>';
-						endforeach;
-							?></div>
-						<!-- End Actividad -->
-						
-					</div>
-				</div>
-				<!-- End Box -->
-			</div>
-			<!-- End Sidebar -->
+			
+			
 			
 			<div class="cl">&nbsp;</div>			
 		</div>

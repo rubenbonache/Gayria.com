@@ -42,7 +42,7 @@ $(document).ready(function(){
 				<span>|</span>
 				<?php echo anchor('settings/lang/EN/admin/'.$this->uri->segment(2), 'EN') ?>
 				<span>|</span>
-				<a href="#">Profile Settings</a>
+				<a href="<?=base_url()?>">Home</a>
 				<span>|</span>
 				<?php echo anchor('service/auth/logout', $this->lang->line('logout')) ?>
 			</div>

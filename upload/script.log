@@ -392,3 +392,84 @@ Array
 )
 
 ---
+Array
+(
+    [time] => Sat, 25 Aug 2012 11:17:55 +0000
+    [addr] => ******k.local
+    [agent] => Adobe Flash Player 11
+    [post] => Array
+        (
+            [Filename] => PICT0629.JPG
+            [Upload] => Submit Query
+        )
+
+    [files] => Array
+        (
+            [Filedata] => Array
+                (
+                    [name] => PICT0629.JPG
+                    [type] => 
+                    [tmp_name] => 
+                    [error] => 1
+                    [size] => 0
+                )
+
+        )
+
+)
+
+---
+Array
+(
+    [time] => Sat, 25 Aug 2012 11:18:26 +0000
+    [addr] => ******k.local
+    [agent] => Adobe Flash Player 11
+    [post] => Array
+        (
+            [Filename] => IMG_0066.PNG
+            [Upload] => Submit Query
+        )
+
+    [files] => Array
+        (
+            [Filedata] => Array
+                (
+                    [name] => IMG_0066.PNG
+                    [type] => application/octet-stream
+                    [tmp_name] => /private/var/tmp/php6VSNwB
+                    [error] => 0
+                    [size] => 91850
+                )
+
+        )
+
+)
+
+---
+Array
+(
+    [time] => Sat, 25 Aug 2012 14:24:07 +0000
+    [addr] => ******k.local
+    [agent] => Adobe Flash Player 11
+    [post] => Array
+        (
+            [Filename] => 1600 x 1200.jpg
+            [Upload] => Submit Query
+        )
+
+    [files] => Array
+        (
+            [Filedata] => Array
+                (
+                    [name] => 1600 x 1200.jpg
+                    [type] => application/octet-stream
+                    [tmp_name] => /private/var/tmp/phpTSgYFX
+                    [error] => 0
+                    [size] => 267419
+                )
+
+        )
+
+)
+
+---

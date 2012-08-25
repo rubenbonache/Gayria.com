@@ -20,7 +20,7 @@ date_default_timezone_set('UTC');
 <header>
     	<div class="header-bg1">
             <?
-                if($this->session->userdata('status'))
+              /*  if($this->session->userdata('status'))
                 {
                     echo '<div id="header-mail" class="header-mail">';
 
@@ -32,8 +32,9 @@ date_default_timezone_set('UTC');
                         echo anchor('perfil/me/mensajeria',$this->perfil->msg_read($this->session->userdata('id')));
                     }     
 
-                     echo '</div>';  
-                }
+                     echo '</div>'; 
+
+                }*/
             ?>
         	<div class="header-bg2">
             	<div class="inner">

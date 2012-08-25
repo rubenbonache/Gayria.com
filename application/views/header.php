@@ -10,6 +10,7 @@ date_default_timezone_set('UTC');
     <meta name="keywords" content="gay">
     <link rel="stylesheet" href="<?php echo base_url()?>static/css/style.css">
     <link rel="stylesheet" href="<?php echo base_url()?>static/css/styles-menu.css">
+    <link rel="stylesheet" href="<?php echo base_url()?>static/css/galleria-classic.css">
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="http://www.gayra.com/apple.png"/>
     <script type='text/javascript' src="<?php echo base_url()?>static/js/jquery-1.6.min.js"></script>
@@ -178,7 +179,7 @@ window.addEvent('domready', function() {
     color: #000;
     padding-left: 48px;
     line-height: 24px;
-    background: url(http://macbook.local/~ruben/up3/showcase/attach-a-file/assets/error.png) no-repeat 24px 5px;
+    background: url(./assets/error.png) no-repeat 24px 5px;
     margin-bottom: 1px;
 }
 #demo-list .file-invalid span {
@@ -189,7 +190,7 @@ window.addEvent('domready', function() {
 #demo-list .file {
     line-height: 2em;
     padding-left: 22px;
-    /*background: url(http://macbook.local/~ruben/up3/showcase/attach-a-file/assets/attach.png) no-repeat 1px 50%;*/
+    /*background: url(./attach-a-file/assets/attach.png) no-repeat 1px 50%;*/
 }
 
 #demo-list .file span,
@@ -209,8 +210,10 @@ window.addEvent('domready', function() {
     width: 125px;
     height: 12px;
     vertical-align: middle;
-    background-image: url(http://macbook.local/~ruben/up3/assets/progress-bar/progress.gif);
+    background-image: url('<?php echo base_url()?>static/images/progress.gif');
 }
+
+/* #galleria{ width:890px height:320px}*/
     </style>
 <?
 }
@@ -223,6 +226,7 @@ window.addEvent('domready', function() {
 <header>
     	<div class="header-bg1">
             <?php
+            /*
                 if($this->session->userdata('status')):
             ?>
             <div id="header-mail" class="header-mail">
@@ -241,6 +245,7 @@ window.addEvent('domready', function() {
             </div>
             <?php
             endif;
+            */
             ?>
         	<div class="header-bg2">
             	<div class="inner">

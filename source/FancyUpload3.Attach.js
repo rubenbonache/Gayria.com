@@ -135,7 +135,7 @@ FancyUpload3.Attach.File = new Class({
 			this.ui.cancel
 		).inject(this.base.list);
 		
-		var progress = new Element('img', {'class': 'file-progress', src: 'http://macbook.local/~ruben/up3/assets/progress-bar/bar.gif'}).inject(this.ui.size, 'after');
+		var progress = new Element('img', {'class': 'file-progress', src: 'http://gayria.com/static/images/bar.gif'}).inject(this.ui.size, 'after');
 		this.ui.progress = new Fx.ProgressBar(progress, {
 			fit: true
 		}).set(0);

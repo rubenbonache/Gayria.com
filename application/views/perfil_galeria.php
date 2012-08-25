@@ -110,8 +110,14 @@
 								<th><?php echo $this->lang->line('status'); ?></th>
 								<th width="110" class="ac">Control</th>
 							</tr>
-							<?php 
-							$query = $this->db->query("SELECT * FROM galeria WHERE author = '".$this->session->userdata('id')."' ORDER BY id DESC LIMIT ".$page.",10");
+							<?php
+							if($this->session->userdata('status')==2 OR $this->session->userdata('status')==4)
+							{
+								$query = $this->db->query("SELECT * FROM galeria WHERE author = '".$this->session->userdata('id')."' ORDER BY id DESC LIMIT 0,5");
+							}else
+							{ 
+								$query = $this->db->query("SELECT * FROM galeria WHERE author = '".$this->session->userdata('id')."' ORDER BY id DESC LIMIT ".$page.",10");
+							}
 							foreach($query->result() as $item):?>
 
 							<tr>

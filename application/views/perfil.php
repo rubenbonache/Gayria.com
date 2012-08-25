@@ -3,6 +3,7 @@
   $fnacimiento = json_decode($fnacimiento,true);
   $fnacimiento = mdate('%Y')-$fnacimiento['ano'];
   if($fnacimiento>100) $fnacimiento = '';
+
 ?>
         	  <h4 class="nombperfil"><?=$name?> <?=$apellido?></h4>
             <div class="right" style="padding-right: 20px;">
@@ -285,7 +286,22 @@
 					
 				</div>
         <? endif; ?>
-        <? if($this->uri->segment(4)=="galeria"): ?>      
+        <? if($this->uri->segment(4)=="galeria"): ?>
+    <link rel="stylesheet" href="<?php echo base_url()?>static/css/colorbox.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="<?php echo base_url()?>static/js/jquery.colorbox.js"></script>
+    <script>
+      $(document).ready(function(){
+
+        $(".group2").colorbox({rel:'group2', transition:"fade", maxWidth:"750px"});
+        
+        //Example of preserving a JavaScript event for inline calls.
+        $("#click").click(function(){ 
+          $('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
+          return false;
+        });
+      });
+    </script>      
         <? if($this->uri->segment(5)=="img"){ ?>      
         <div id="four" class="content-box current">
           <div class="col-one col" style="width: 100%">
@@ -307,10 +323,17 @@
 					<p class="titulosficha">Mis fotos</p>
             
           <?
-              $this->db->order_by('id','DESC');
-              $query = $this->db->get_where('galeria', array('author' => $this->uri->segment(3), 'active' => '1'));
+              if($status==2 OR $status==4)
+              {
+                $query = $this->db->query("SELECT * FROM galeria WHERE author = '".$this->uri->segment(3)."' AND active = 1 ORDER BY id DESC LIMIT 0,6");
+              }else
+              { 
+                $query = $this->db->query("SELECT * FROM galeria WHERE author = '".$this->uri->segment(3)."' AND active = 1 ORDER BY id DESC LIMIT ".$page.",10");
+              }
+              //$this->db->order_by('id','DESC');
+              //$query = $this->db->get_where('galeria', array('author' => $this->uri->segment(3), 'active' => '1'));
               foreach ($query->result() as $value) {
-                echo '<div style="float: left; padding: 20px 20px 20px 20px;">'.anchor('perfil/view/'.$this->uri->segment(3).'/galeria/img/'.$value->id, '<img style="border: 2px solid #FFF;" src="'.base_url().'/upload/'.$value->thumb.'" width="100px">').'</div>';
+                echo '<div style="float: left; padding: 20px 20px 20px 20px;">'.anchor(base_url().'upload/'.$value->path, '<img style="border: 2px solid #FFF;" src="'.base_url().'/upload/'.$value->thumb.'" width="100px">', 'class="group2"').'</div>';
               
               }
           ?>
