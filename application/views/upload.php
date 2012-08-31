@@ -158,7 +158,7 @@
 <!-- The main application script -->
 <script src="<?=base_url()?>static/js/main.js"></script>
 <!-- The XDomainRequest Transport is included for cross-domain file deletion for IE8+ -->
-<!--[if gte IE 8]><script src="js/cors/jquery.xdr-transport.js"></script><![endif]-->
+<!--[if gte IE 8]><script src="<?=base_url()?>static/js/cors/jquery.xdr-transport.js"></script><![endif]-->
 </div>
 </body> 
 </html>
