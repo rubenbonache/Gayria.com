@@ -112,7 +112,7 @@ date_default_timezone_set('UTC');
                                             echo '<h4 class="head-1">'.$value->name.' '.$value->apellido.'</h4>';
                                             if($value->fotoperfil)
                                             {
-                                                 echo '<div class="right"><img src="'.base_url().'upload/'.img_perfil($value->fotoperfil).'" alt="" width="100"/></div>';                                               
+                                                 echo '<div class="right"><img src="'.base_url().img_perfil($value->fotoperfil).'" alt="" width="100"/></div>';                                               
                                             }else
                                             {
                                                 echo '<div class="right"><img src="http://gayria.com/imagenodisp.jpg" alt="" width="100"/></div>';

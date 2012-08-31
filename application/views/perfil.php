@@ -333,7 +333,7 @@
               //$this->db->order_by('id','DESC');
               //$query = $this->db->get_where('galeria', array('author' => $this->uri->segment(3), 'active' => '1'));
               foreach ($query->result() as $value) {
-                echo '<div style="float: left; padding: 20px 20px 20px 20px;">'.anchor(base_url().'upload/'.$value->path, '<img style="border: 2px solid #FFF;" src="'.base_url().'/upload/'.$value->thumb.'" width="100px">', 'class="group2"').'</div>';
+                echo '<div style="float: left; padding: 20px 20px 20px 20px;">'.anchor(base_url().$value->path, '<img style="border: 2px solid #FFF;" src="'.base_url().$value->thumb.'" width="100px">', 'class="group2"').'</div>';
               
               }
           ?>

@@ -25,11 +25,29 @@
   }
 
 ?>
+    <link rel="stylesheet" href="<?php echo base_url()?>static/css/colorbox.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="<?php echo base_url()?>static/js/jquery.colorbox.js"></script>
+    <script>
+      $(document).ready(function(){
+
+        $(".group2").colorbox({rel:'group2', transition:"fade", maxWidth:"750px"});
+        $(".iframe").colorbox({iframe:true, width:"50%", height:"80%", onClosed:function(){ window.location.reload( true ); }});
+        $(".inline").colorbox({inline:true, width:"50%"}); 
+        
+        //Example of preserving a JavaScript event for inline calls.
+        $("#click").click(function(){ 
+          $('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
+          return false;
+        });
+      });
+    </script> 
 <div id="cssmenu" class='cssmenu'>
 <ul>
    <li><?php echo anchor('perfil/me/', '<span>'.$this->lang->line('info').'</span>');?></li>
    <li><?php echo anchor('perfil/me/galeria', '<span>'.$this->lang->line('galeria').'</span>');?></li>
    <li><?php echo anchor('perfil/me/mensajeria', '<span>'.$this->lang->line('mensajeria').' '.$this->perfil->msg_read($this->session->userdata('id')).'</span>');?></li>
+   <li><?php echo anchor('perfil/me/favoritos', '<span>'.$this->lang->line('').'Favoritos</span>');?></li>
    <li><?php echo anchor($link.$this->session->userdata('id'), '<span>'.$this->lang->line('mi_perfil').'</span>');?></li>
    <li><?php echo anchor('service/auth/logout', '<span>'.$this->lang->line('logout').'</span>');?></li>
    <?php if($this->session->userdata('status')==2):?><li><?php echo anchor('premium', '<span style="color: red;">Premium</span>');?></li><?php endif;?>
@@ -90,10 +108,9 @@
 					<div class="box-head">
 						<h2 class="left">Lista de imagenes</h2>
 						<div class="right">
-							<div>
-							<a href="#" id="demo-attach" class="up-button">Subir imagen</a>
-							<ul id="demo-list"></ul>
-							</div><!--<a href="javascript:void(0);" class="up-button" onclick="window.open('<?php echo site_url('/service/upload/file');?>', '_blank', 'width=350,height=150,menubar=no, location=no ,status=no, titlebar=no,toolbar=no, scrolling=no, scrollbars=no,screenx=100,screeny=100');">Subir imagen</a>-->
+							
+								
+								<?=anchor('service/up#inline_content', 'Subir imagen', 'class="iframe up-button"')?>
 						</div>
 					</div>
 					<!-- End Box Head-->
@@ -122,7 +139,7 @@
 
 							<tr>
 								<td></td>
-								<td width="113"><h3><?php echo anchor('perfil/me/galeria/view/'.$item->id, '<img src="'.base_url().'upload/'.$item->thumb.'" width="100px">');?></h3></td>
+								<td width="113"><h3><?php echo anchor('perfil/me/galeria/view/'.$item->id, '<img src="'.base_url().$item->thumb.'" width="100px">');?></h3></td>
 								<td width="113"><?php echo mdate('%d/%m/%Y', $item->fecha);?></td>
 								<td width="113"><?php echo $this->lang->line('status_'.$item->active)?></td>
 								<td><?php echo img_perfil_exist($this->perfil->img_perfil(), $item->id)?>

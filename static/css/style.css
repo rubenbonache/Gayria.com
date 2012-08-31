@@ -377,7 +377,7 @@ a {
 	text-decoration:none;
 	cursor:pointer;
 }
-	a:hover {text-decoration: underline;}
+	a:hover {text-decoration: none;}
 p a, dl a {color:#e82938;}
 
 .button {
@@ -453,7 +453,7 @@ p a, dl a {color:#e82938;}
 	text-decoration:none;
 }
 	.link-1:hover {
-		text-decoration:underline;
+		text-decoration:none;
 	}
 /*********************************header*************************************/
 header{

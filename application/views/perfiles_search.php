@@ -158,7 +158,7 @@
         echo '<img src="http://gayria.com/imagenodisppeq.jpg" width="75px">';
       }else
       {
-        echo '<img src="'.base_url().'upload/'.img_perfil($item->fotoperfil).'" width="75px">';
+        echo '<img src="'.base_url().img_perfil($item->fotoperfil).'" width="75px">';
       }
     ?>
     </td>

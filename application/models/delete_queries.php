@@ -14,8 +14,8 @@
 			$query = mysql_query("SELECT * FROM galeria WHERE id = '".$item."'");
 			while ($row = mysql_fetch_array($query))
 			 {
-				@unlink('./upload/'.$row["path"]);
-				@unlink('./upload/'.$row["thumb"]); 
+				@unlink('./'.$row["path"]);
+				@unlink('./'.$row["thumb"]); 
 				mysql_query('DELETE FROM galeria WHERE id = "'.$item.'"');
 
 				$error = array('delete' => $this->lang->line('img_delete'));

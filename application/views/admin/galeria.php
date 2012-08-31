@@ -81,7 +81,7 @@
 
 							<tr>
 								<td></td>
-								<td><h3><?php echo anchor('admin/galeria/view/'.$item->id, '<img src="'.base_url().'upload/'.$item->thumb.'" width="50px">');?></h3></td>
+								<td><h3><?php echo anchor('admin/galeria/view/'.$item->id, '<img src="'.base_url().$item->thumb.'" width="50px">');?></h3></td>
 								<td><?php echo mdate('%d/%m/%Y', $item->fecha);?></td>
 								<td><?php echo anchor('admin/galeria/user/'.$item->author, get_user($item->author))?></td>
 								<td><?php echo $this->lang->line('status_'.$item->active)?></td>

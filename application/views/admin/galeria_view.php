@@ -73,7 +73,7 @@
 							$query = $this->db->query("SELECT * FROM galeria WHERE id = '".$this->uri->segment(4)."'");
 							foreach($query->result() as $item):?>
 
-							<img src="<?php echo base_url().'upload/'.$item->path;?>" width="725px">
+							<img src="<?php echo base_url().$item->path;?>" width="725px">
 
 							<?php endforeach;?>
 						

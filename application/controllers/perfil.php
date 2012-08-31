@@ -110,7 +110,11 @@
 				$this->load->view('header');
 					if($this->session->userdata('status'))
 					{
-						if($this->uri->segment(3)=="galeria")
+						if($this->uri->segment(3)=="favoritos")
+						{
+							$this->load->view('perfil_favoritos');
+						}
+						elseif($this->uri->segment(3)=="galeria")
 						{
 							if($this->uri->segment(4)=="view")
 							{

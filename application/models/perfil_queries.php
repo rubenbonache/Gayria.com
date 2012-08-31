@@ -9,6 +9,8 @@
             parent::__construct();
         }
 
+      
+
         function msg_read($item)
 		{
 			$query = mysql_query("SELECT count(*) as total FROM mensajeria WHERE para = '".$item."' AND leido = '1'");
